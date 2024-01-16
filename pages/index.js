@@ -36,35 +36,45 @@ export default function Home() {
         <div className="w-full h-full">
             <div className="absolute w-full h-full" id="olipop">
             {mousePercentage < 75 && 
-                <div>
-                    <div className="p-8">Olipop</div>
+                <div className="w-full h-full">
+                    <video loop autoPlay muted src="olipop.mp4" className="w-full h-full object-cover" />
                 </div>
             }
             </div>
-            <div className="absolute w-full h-full" id="super8">
-                <div className={mousePercentage > 50 && mousePercentage < 75 ? "visible" : "invisible"}>
-                    <div className="p-16">Super 8</div>
-                </div>
-            </div>
-            <div className="absolute w-full h-full" id="titleCard">
-                <div className={mousePercentage > 75 && mousePercentage < 95 ? "visible" : "invisible"}>
-                    <div className="p-20">Title Card</div>
-                </div>
-            </div>
             <div className="absolute w-full h-full" id="chicago">
-                <div className={mousePercentage > 55 && mousePercentage < 85 ? "visible" : "invisible"}>
-                    <div className="p-24">Chicago</div>
+                {(mousePercentage > 55 && mousePercentage < 85) && (
+                    <div className="w-full h-full">
+                        <video loop autoPlay muted src="chicago-encoded-hevc-safari.mp4" className="w-full h-full object-cover" />
+                    </div> 
+                )}
+            </div>
+            <div className="absolute w-full h-full" id="super8">
+                {(mousePercentage > 50 && mousePercentage < 75) && (
+                <div className="w-full h-full">
+                    <video loop autoPlay muted src="super8-hevc-safari.mp4" className="w-full h-full object-cover" />
                 </div>
+                )}
             </div>
             <div className="absolute w-full h-full" id="looking">
-                <div className={mousePercentage > 65 && mousePercentage < 95 ? "visible" : "invisible"}>
-                    <div className="p-32">Looking</div>
-                </div>
+                {(mousePercentage > 65 && mousePercentage < 95) && (
+                     <div className="w-full h-full">
+                        <video loop autoPlay muted src="looking-hevc-safari.mp4" className="w-full h-full object-cover" />
+                    </div>
+                )}
+            </div>
+            <div className="absolute w-full h-full" id="titleCard">
+                {(mousePercentage > 75 && mousePercentage < 95) && (
+                    <div className="w-full h-full">
+                        <video loop autoPlay muted src="title.mp4" className="w-full h-full object-cover" />
+                    </div> 
+                )}
             </div>
             <div className="absolute w-full h-full" id="nike">
-                <div className={mousePercentage > 65 ? "visible" : "invisible"}>
-                    <div className="p-36">Nike</div>
-                </div>
+                {mousePercentage > 65 && (
+                    <div className="w-full h-full">
+                        <video loop autoPlay muted src="nike.mp4" className="w-full h-full object-cover" />
+                    </div>
+                )}
             </div>
         </div>
     )
