@@ -44,35 +44,35 @@ export default function Home() {
             <div className="absolute w-full h-full" id="chicago">
                 {(mousePercentage > 55 && mousePercentage < 85) && (
                     <div className="w-full h-full">
-                        <video loop autoPlay muted src="chicago-encoded-hevc-safari.mp4" className="w-full h-full object-cover" />
+                        <img src="chicago.png" className="w-full h-full object-cover" />
                     </div> 
                 )}
             </div>
             <div className="absolute w-full h-full" id="super8">
                 {(mousePercentage > 50 && mousePercentage < 75) && (
                 <div className="w-full h-full">
-                    <video loop autoPlay muted src="super8-hevc-safari.mp4" className="w-full h-full object-cover" />
+                    <img src="super8.png" className="w-full h-full object-cover" />
                 </div>
                 )}
             </div>
-            <div className="absolute w-full h-full" id="looking">
-                {(mousePercentage > 65 && mousePercentage < 95) && (
-                     <div className="w-full h-full">
-                        <video loop autoPlay muted src="looking-hevc-safari.mp4" className="w-full h-full object-cover" />
+            <div className="absolute w-full h-full" id="nike">
+                {mousePercentage > 83 && (
+                    <div className="w-full h-full">
+                        <video loop autoPlay muted src="nike.mp4" className="w-full h-full object-cover" />
                     </div>
                 )}
             </div>
             <div className="absolute w-full h-full" id="titleCard">
-                {(mousePercentage > 75 && mousePercentage < 95) && (
+                {(mousePercentage > 75 && mousePercentage < 85) && (
                     <div className="w-full h-full">
                         <video loop autoPlay muted src="title.mp4" className="w-full h-full object-cover" />
                     </div> 
                 )}
             </div>
-            <div className="absolute w-full h-full" id="nike">
-                {mousePercentage > 65 && (
-                    <div className="w-full h-full">
-                        <video loop autoPlay muted src="nike.mp4" className="w-full h-full object-cover" />
+            <div className="absolute w-full h-full" id="looking">
+                {(mousePercentage > 65 && mousePercentage < 85) && (
+                     <div className="w-full h-full">
+                        <img src="looking.png" className="w-full h-full object-cover" />
                     </div>
                 )}
             </div>
