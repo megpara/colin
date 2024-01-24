@@ -9,6 +9,7 @@ function MyApp({ Component, pageProps }) {
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
         />
+        <link rel="stylesheet" href="https://use.typekit.net/oev0dtt.css" />
       </Head>{" "}
           <Component {...pageProps} />
     </>
