@@ -6,7 +6,7 @@ export default function Page() {
         <div className="absolute bg-black text-white flex flex-col">
             <Header />
             <HorizontalScroll/>
-            <div className="w-screen h-[150px] text-center"></div>
+            {/* <div className="w-screen h-[150px] text-center"></div> */}
         </div>
     )
 }
