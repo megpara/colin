@@ -16,10 +16,13 @@ export default function HorizontalScroll() {
     const [showOverhead1, setShowOverhead1] = useState(false);
     const [showOverhead2, setShowOverhead2] = useState(false);
     const [showOverhead3, setShowOverhead3] = useState(false);
+    const [showTds1, setShowTds1] = useState(false);
+    const [showTds2, setShowTds2] = useState(false);
+    const [showTds3, setShowTds3] = useState(false);
 
     const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
-        if ( latest > 0.01 && latest < 0.2 ) {
+        if ( latest > 0.02 && latest < 0.2 ) {
             setShowCheese(true);
         } else {
             setShowCheese(false);
@@ -31,7 +34,7 @@ export default function HorizontalScroll() {
             setShowMonitor(false);
         }
 
-        if ( latest > 0.1 && latest < 0.15 ) {
+        if ( latest > 0.2 && latest < 0.25 ) {
             setShowOverhead1(true);
         } else {
             setShowOverhead1(false);
@@ -49,13 +52,31 @@ export default function HorizontalScroll() {
             setShowOverhead3(false);
         }
 
+        if ( latest > 0.35 && latest < 0.4 ) {
+            setShowTds1(true);
+        } else {
+            setShowTds1(false);
+        }
+
+        if ( latest > 0.4 && latest < 0.45 ) {
+            setShowTds2(true);
+        } else {
+            setShowTds2(false);
+        }
+
+        if ( latest > 0.45 && latest < 0.5 ) {
+            setShowTds3(true);
+        } else {
+            setShowTds3(false);
+        }
+        
         if ( latest > 0.318 ) {
             setPlayDirecting(true);
         } else {
             setPlayDirecting(false);
-        } 
+        }
 
-        if ( latest > 0.669) {
+        if ( latest > 0.66) {
             setPlayCine(true);
         } else {
             setPlayCine(false);
@@ -72,45 +93,49 @@ export default function HorizontalScroll() {
   
     return (
         <section ref={targetRef} className="relative h-[900vh]">
-            {/* <CircleIndicator /> */}
+            <CircleIndicator />
             <div className="sticky top-0 flex items-center overflow-hidden">
                 <motion.div style={{ x }} className="flex overflow-hidden">
                     <div className="absolute top-0 w-full h-full z-10">
                         <div className="relative w-full h-full">
                         {showCheese && <img src="2_cheese_v1_(2x20)_00439.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        {showMonitor && <video autoPlay muted loop src="3_monitor_v1_(8x26.66).mov" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        {showOverhead1 && <img src="5_overhead1_v1_(10x15)_00434.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
+                        {showMonitor && <video autoPlay muted loop src="3.1_Monitor_v1_(75-80)_00851_00870_01803_01855.mov" className="absolute top-0 left-0 w-full h-full object-cover"/>}
+                        {showOverhead1 && <img src="5_overhead1_v1_(20x25)_00434.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
                         {showOverhead2 && <img src="6_overhead2_v1_(15x20)_00439_00448.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
                         {showOverhead3 && <img src="7_overhead3_v1_(20x26.666)_00461.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
+                        {showTds1 && <img src="8_tds1_v1_(35x40).png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
+                        {showTds2 && <img src="9_tds2_v1_(40-45).png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
+                        {showTds3 && <img src="10_tds3_v1_(45-50).png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
                         </div>
                     </div>
                     <div className="w-screen h-screen relative group">
-                        <video loop autoPlay muted src="1_intro_v1_(0x21).mp4" className="w-full h-full object-cover overflow-hidden" />
+                        <video autoPlay muted src="1_intro_v1_(0x21).mp4" className="w-full h-full object-cover overflow-hidden" />
                     </div>
                     <div className="h-screen w-max relative" id="directing_banner">
-                        <video autoPlay muted src="1.2_directingbanner_v1_(0x26.66).mp4" className="w-full h-full object-cover" />
+                        <video loop autoPlay muted src="1.2_directingbanner_v1_(0x26.66).mp4" className="w-full h-full object-cover" />
                     </div>
                     <div className="w-screen h-screen relative group">
-                        <video loop autoPlay muted src="4_directingstill_v1_(6x26.666).mp4" className="w-full h-full object-cover" />
+                        <video loop autoPlay muted src="4_directingstill_v1_(46x46.666).mp4" className="w-full h-full object-cover" />
                         {playDirecting && (
-                            <video loop autoPlay muted src="3_directingreel_v1_(26.666x43.402).mp4" className="absolute top-0 left-0 w-full h-full object-cover overflow-hidden" />
+                            <video loop autoPlay muted src="3_directingreel_v1_(46.666x63.402).mp4" className="absolute top-0 left-0 w-full h-full object-cover overflow-hidden" />
                         )}
                     </div>
                     <div className="h-screen w-max relative" id="directing_banner">
-                        <video autoPlay muted src="cinebanner_v1_(26.66x).mp4" className="w-full h-full object-cover" />
+                        <video loop autoPlay muted src="cinebanner_v1_(26.66x).mp4" className="w-full h-full object-cover" />
                     </div>
                     <div className="w-screen h-screen relative group">
                     <video loop autoPlay muted src="Ciniebanner_v1_(26.666x43.402).mp4" className="w-full h-full object-cover" />
                         {playCine && (
-                            <video loop autoPlay muted src="4_cinereel_v1_(26.666x43.402).mp4" className="absolute top-0 left-0 w-full h-full object-cover overflow-hidden" />
+                            <video loop autoPlay muted src="4_cinereel_v1_(46.666x63.402).mp4" className="absolute top-0 left-0 w-full h-full object-cover overflow-hidden" />
                         )}
                     </div>
                     <div className="h-screen w-max relative" id="directing_banner">
-                        <video autoPlay muted src="editingbanner_v1_(75x100).mp4" className="w-full h-full object-cover" />
+                        <video loop autoPlay muted src="editingbanner_v1_(75x100).mp4" className="w-full h-full object-cover" />
                     </div>
                     <div className="w-screen h-screen relative group">
+                        <video loop autoPlay muted src="4.1_editingstill_v1.mp4" className="w-full h-full object-cover" />
                         {playEditing && (
-                            <video loop autoPlay muted src="editingreel.mp4" className="w-full h-full object-cover overflow-hidden" />
+                            <video loop autoPlay muted src="editingreel.mp4" className="absolute top-0 left-0 w-full h-full object-cover overflow-hidden" />
                         )}
                     </div>
                     {/* <div className="w-screen h-screen relative">
