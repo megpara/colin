@@ -19,6 +19,13 @@ export default function HorizontalScroll() {
     const [showTds1, setShowTds1] = useState(false);
     const [showTds2, setShowTds2] = useState(false);
     const [showTds3, setShowTds3] = useState(false);
+    const [showDj1, setShowDj1] = useState(false);
+    const [showDj2, setShowDj2] = useState(false);
+    const [showDj3, setShowDj3] = useState(false);
+    const [showTv, setShowTv] = useState(false);
+    const [showWiz1, setShowWiz1] = useState(false);
+    const [showWiz2, setShowWiz2] = useState(false);
+    const [showLizzo, setShowLizzo] = useState(false);
 
     const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
@@ -69,6 +76,48 @@ export default function HorizontalScroll() {
         } else {
             setShowTds3(false);
         }
+
+        if ( latest > 0.7 && latest < 0.83 ) {
+            setShowDj1(true);
+        } else {
+            setShowDj1(false);
+        }
+
+        if ( latest > 0.82 && latest < 0.88 ) {
+            setShowDj2(true);
+        } else {
+            setShowDj2(false);
+        }
+
+        if ( latest > 0.87 && latest < 0.95 ) {
+            setShowDj3(true);
+        } else {
+            setShowDj3(false);
+        }
+
+        if ( latest > 0.59 && latest < 0.68 ) {
+            setShowTv(true);
+        } else {
+            setShowTv(false);
+        }
+
+        if ( latest > 0.8 && latest < 0.85 ) {
+            setShowWiz1(true);
+        } else {
+            setShowWiz1(false);
+        }
+
+        if ( latest > 0.85 && latest < 0.9 ) {
+            setShowWiz2(true);
+        } else {
+            setShowWiz2(false);
+        }
+
+        if ( latest > 0.9 && latest < 1 ) {
+            setShowLizzo(true);
+        } else {
+            setShowLizzo(false);
+        }
         
         if ( latest > 0.318 ) {
             setPlayDirecting(true);
@@ -99,13 +148,20 @@ export default function HorizontalScroll() {
                     <div className="absolute top-0 w-full h-full z-10">
                         <div className="relative w-full h-full">
                         {showCheese && <img src="2_cheese_v1_(2x20)_00439.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        {showMonitor && <video autoPlay muted loop src="3.1_Monitor_v1_(75-80)_00851_00870_01803_01855.mov" className="absolute top-0 left-0 w-full h-full object-cover"/>}
+                        {showMonitor && <video autoPlay muted loop src="3.1_Monitor_v1_(75-80)_00851_00870_01803_01855-1-hevc-safari.mp4" className="absolute top-0 left-0 w-full h-full object-cover"/>}
                         {showOverhead1 && <img src="5_overhead1_v1_(20x25)_00434.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
                         {showOverhead2 && <img src="6_overhead2_v1_(15x20)_00439_00448.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
                         {showOverhead3 && <img src="7_overhead3_v1_(20x26.666)_00461.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        {showTds1 && <img src="8_tds1_v1_(35x40).png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        {showTds2 && <img src="9_tds2_v1_(40-45).png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        {showTds3 && <img src="10_tds3_v1_(45-50).png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
+                        {showTds1 && <img src="8_tds1_v1_(35x40)_00792_00792.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
+                        {showTds2 && <img src="9_tds2_v1_(40-45)_00804_00809_00806.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
+                        {showTds3 && <img src="10_tds3_v1_(45-50)_00833_00826.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
+                        {showDj1 && <img src="12_dj1_v1_(52-53.333)_00851_00870_00890_00893_00849.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
+                        {showDj2 && <img src="12_dj2_v1_(51-52)_00851_00870_00870.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
+                        {showDj3 && <img src="12_dj3_v1_(52-53.333)_00851_00870_00890_00893.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
+                        {showMonitor && <video autoPlay muted loop src="14_tv1_v1_(59-68)-hevc-safari.mp4" className="absolute top-0 left-0 w-full h-full object-cover"/>}
+                        {showWiz1 && <img src="15_wiz1_v1_(68-73)_00851_00870_01803_01817.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
+                        {showWiz2 && <img src="16_wiz2_v1_(73-75)_00851_00870_01803_01816_01842.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
+                        {showLizzo && <img src="17_lizzo_v1_(75-80)_00851_00870_01803_01855_01855.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
                         </div>
                     </div>
                     <div className="w-screen h-screen relative group">
