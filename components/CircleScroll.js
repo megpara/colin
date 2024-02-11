@@ -19,7 +19,7 @@ export const CircleIndicator = () => {
     <>
       {!isComplete && (
         <svg
-          className="fixed bottom-[10px] left-[30px] w-[80px] h-[80px] z-10"
+          className="fixed bottom-[10px] left-[30px] w-[80px] h-[80px] z-10 title"
           viewBox="0 0 60 60"
         >
           <motion.path
@@ -46,11 +46,11 @@ export const CircleIndicator = () => {
             animate={{ pathLength: isComplete ? 1 : 0 }}
           />
           <text
-            x="10"
-            y="27"
-            className="text-[7.5px] tracking-wide uppercase fill-white font-extrabold"
+            x="11"
+            y="29"
+            className="text-[10px] tracking-wide fill-white font-extrabold"
           >
-            scroll
+            Scroll
           </text>
         </svg>
       )}

@@ -95,7 +95,7 @@ export default function HorizontalScroll() {
             setShowDj3(false);
         }
 
-        if ( latest > 0.59 && latest < 0.68 ) {
+        if ( latest > 0.74 && latest < 0.90 ) {
             setShowTv(true);
         } else {
             setShowTv(false);
@@ -143,29 +143,30 @@ export default function HorizontalScroll() {
     return (
         <section ref={targetRef} className="relative h-[900vh]">
             <CircleIndicator />
-            <div className="sticky top-0 flex items-center overflow-hidden">
+            <div className="sticky top-0 left-0 flex items-center overflow-hidden">
                 <motion.div style={{ x }} className="flex overflow-hidden">
-                    <div className="absolute top-0 w-full h-full z-10">
-                        <div className="relative w-full h-full">
-                        {showCheese && <img src="2_cheese_v1_(2x20)_00439.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        {showMonitor && <video autoPlay muted loop src="3.1_Monitor_v1_(75-80)_00851_00870_01803_01855-1-hevc-safari.mp4" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        {showOverhead1 && <img src="5_overhead1_v1_(20x25)_00434.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        {showOverhead2 && <img src="6_overhead2_v1_(15x20)_00439_00448.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        {showOverhead3 && <img src="7_overhead3_v1_(20x26.666)_00461.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        {showTds1 && <img src="8_tds1_v1_(35x40)_00792_00792.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        {showTds2 && <img src="9_tds2_v1_(40-45)_00804_00809_00806.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        {showTds3 && <img src="10_tds3_v1_(45-50)_00833_00826.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        {showDj1 && <img src="12_dj1_v1_(52-53.333)_00851_00870_00890_00893_00849.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        {showDj2 && <img src="12_dj2_v1_(51-52)_00851_00870_00870.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        {showDj3 && <img src="12_dj3_v1_(52-53.333)_00851_00870_00890_00893.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        {showMonitor && <video autoPlay muted loop src="14_tv1_v1_(59-68)-hevc-safari.mp4" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        {showWiz1 && <img src="15_wiz1_v1_(68-73)_00851_00870_01803_01817.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        {showWiz2 && <img src="16_wiz2_v1_(73-75)_00851_00870_01803_01816_01842.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        {showLizzo && <img src="17_lizzo_v1_(75-80)_00851_00870_01803_01855_01855.png" className="absolute top-0 left-0 w-full h-full object-cover"/>}
-                        </div>
-                    </div>
+                    <img src="Crop_01379_01379.png" className="absolute w-full h-full top-0 left-0 z-20" />
+                    <img src="GRID_01379.png" className="absolute w-full h-full top-0 left-0 z-20" />
+                    {/* <div className="absolute top-0 w-full h-full z-30">
+                        <div className="relative w-full h-full"> */}
+                        {showCheese && <img src="2_cheese_v1_(2x20)_00439.png" className="absolute top-0 left-0 w-full h-full object-cover z-30"/>}
+                        {showOverhead1 && <img src="5_overhead1_v1_(20x25)_00434.png" className="absolute top-0 left-0 w-full h-full object-cover z-30"/>}
+                        {showOverhead2 && <img src="6_overhead2_v1_(15x20)_00439_00448.png" className="absolute top-0 left-0 w-full h-full object-cover z-30"/>}
+                        {showOverhead3 && <img src="7_overhead3_v1_(20x26.666)_00461.png" className="absolute top-0 left-0 w-full h-full object-cover z-30"/>}
+                        {showTds1 && <img src="8_tds1_v1_(35x40)_00792_00792.png" className="absolute top-0 left-0 w-full h-full object-cover z-30"/>}
+                        {showTds2 && <img src="9_tds2_v1_(40-45)_00804_00809_00806.png" className="absolute top-0 left-0 w-full h-full object-cover z-30"/>}
+                        {showTds3 && <img src="10_tds3_v1_(45-50)_00833_00826.png" className="absolute top-0 left-0 w-full h-full object-cover z-30"/>}
+                        {showDj1 && <img src="12_dj1_v1_(52-53.333)_00851_00870_00890_00893_00849.png" className="absolute top-0 left-0 w-full h-full object-cover z-30"/>}
+                        {showDj2 && <img src="12_dj2_v1_(51-52)_00851_00870_00870.png" className="absolute top-0 left-0 w-full h-full object-cover z-30"/>}
+                        {showDj3 && <img src="12_dj3_v1_(52-53.333)_00851_00870_00890_00893.png" className="absolute top-0 left-0 w-full h-full object-cover z-30"/>}
+                        {showWiz1 && <img src="15_wiz1_v1_(68-73)_00851_00870_01803_01817.png" className="absolute top-0 left-0 w-full h-full object-cover z-30"/>}
+                        {showWiz2 && <img src="16_wiz2_v1_(73-75)_00851_00870_01803_01816_01842.png" className="absolute top-0 left-0 w-full h-full object-cover z-30"/>}
+                        {showLizzo && <img src="17_lizzo_v1_(75-80)_00851_00870_01803_01855_01855.png" className="absolute top-0 left-0 w-full h-full object-cover z-30"/>}
+                        {/* </div>
+                    </div> */}
                     <div className="w-screen h-screen relative group">
-                        <video autoPlay muted src="1_intro_v1_(0x21).mp4" className="w-full h-full object-cover overflow-hidden" />
+                        <video autoPlay muted src="1_intro_v1_(0x21).mp4" className="absolute top-0 left-0 w-full h-full object-cover" />
+                        {showMonitor && <video autoPlay muted loop src="Monitor-hevc-safari.mp4" className="absolute bottom-0 right-0 w-1/2 object-cover"/>}
                     </div>
                     <div className="h-screen w-max relative" id="directing_banner">
                         <video loop autoPlay muted src="1.2_directingbanner_v1_(0x26.66).mp4" className="w-full h-full object-cover" />
@@ -176,13 +177,16 @@ export default function HorizontalScroll() {
                             <video loop autoPlay muted src="3_directingreel_v1_(46.666x63.402).mp4" className="absolute top-0 left-0 w-full h-full object-cover overflow-hidden" />
                         )}
                     </div>
-                    <div className="h-screen w-max relative" id="directing_banner">
+                    <div className="h-screen w-max relative" id="cine_banner">
                         <video loop autoPlay muted src="cinebanner_v1_(26.66x).mp4" className="w-full h-full object-cover" />
                     </div>
                     <div className="w-screen h-screen relative group">
                     <video loop autoPlay muted src="Ciniebanner_v1_(26.666x43.402).mp4" className="w-full h-full object-cover" />
                         {playCine && (
                             <video loop autoPlay muted src="4_cinereel_v1_(46.666x63.402).mp4" className="absolute top-0 left-0 w-full h-full object-cover overflow-hidden" />
+                        )}
+                        {showTv && (
+                            <video loop autoPlay muted src="TV-1-hevc-safari.mp4" className="absolute top-0 right-[-20%] z-20 w-1/2 w-full h-full object-cover overflow-hidden" />
                         )}
                     </div>
                     <div className="h-screen w-max relative" id="directing_banner">
