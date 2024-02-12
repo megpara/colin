@@ -1,6 +1,10 @@
 import { use, useRef, useState } from "react"
 import { motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
 import { CircleIndicator } from "./CircleScroll";
+import TopLeft from "./ProjectLinks/TopLeft";
+import TopRight from "./ProjectLinks/TopRight";
+import BottomRight from "./ProjectLinks/BottomRight";
+import BottomLeft from "./ProjectLinks/BottomLeft";
 
 export default function HorizontalScroll() {
     const targetRef = useRef(null);
@@ -146,9 +150,6 @@ export default function HorizontalScroll() {
             <div className="sticky top-0 left-0 flex items-center overflow-hidden">
                 <motion.div style={{ x }} className="flex overflow-hidden">
                     <img src="Crop_01379_01379.png" className="absolute w-full h-full top-0 left-0 z-20" />
-                    <img src="GRID_01379.png" className="absolute w-full h-full top-0 left-0 z-20" />
-                    {/* <div className="absolute top-0 w-full h-full z-30">
-                        <div className="relative w-full h-full"> */}
                         {showCheese && <img src="2_cheese_v1_(2x20)_00439.png" className="absolute top-0 left-0 w-full h-full object-cover z-30"/>}
                         {showOverhead1 && <img src="5_overhead1_v1_(20x25)_00434.png" className="absolute top-0 left-0 w-full h-full object-cover z-30"/>}
                         {showOverhead2 && <img src="6_overhead2_v1_(15x20)_00439_00448.png" className="absolute top-0 left-0 w-full h-full object-cover z-30"/>}
@@ -162,23 +163,35 @@ export default function HorizontalScroll() {
                         {showWiz1 && <img src="15_wiz1_v1_(68-73)_00851_00870_01803_01817.png" className="absolute top-0 left-0 w-full h-full object-cover z-30"/>}
                         {showWiz2 && <img src="16_wiz2_v1_(73-75)_00851_00870_01803_01816_01842.png" className="absolute top-0 left-0 w-full h-full object-cover z-30"/>}
                         {showLizzo && <img src="17_lizzo_v1_(75-80)_00851_00870_01803_01855_01855.png" className="absolute top-0 left-0 w-full h-full object-cover z-30"/>}
-                        {/* </div>
-                    </div> */}
+                    
+                    {/* CREATOR */}
                     <div className="w-screen h-screen relative group">
                         <video autoPlay muted src="1_intro_v1_(0x21).mp4" className="absolute top-0 left-0 w-full h-full object-cover" />
-                        {showMonitor && <video autoPlay muted loop src="Monitor-hevc-safari.mp4" className="absolute bottom-0 right-0 w-1/2 object-cover"/>}
+                        {showMonitor &&
+                            <video autoPlay muted loop src="Monitor-hevc-safari.mp4" className="absolute bottom-0 right-0 w-1/2 object-cover"/>
+                        }
                     </div>
-                    <div className="h-screen w-max relative" id="directing_banner">
-                        <video loop autoPlay muted src="1.2_directingbanner_v1_(0x26.66).mp4" className="w-full h-full object-cover" />
+
+                    {/* DIRECTOR  */}
+                    <div className="h-screen w-[33.3333vw] relative" id="directing_banner">
+                        <video loop autoPlay muted src="1.2_directingbanner_v1_(0x26.66).mp4" className="absolute top-0 left-0 w-full h-full object-cover border-x-[5px] border-black" />
                     </div>
                     <div className="w-screen h-screen relative group">
                         <video loop autoPlay muted src="4_directingstill_v1_(46x46.666).mp4" className="w-full h-full object-cover" />
                         {playDirecting && (
-                            <video loop autoPlay muted src="3_directingreel_v1_(46.666x63.402).mp4" className="absolute top-0 left-0 w-full h-full object-cover overflow-hidden" />
+                            <div className="absolute top-0 left-0 w-full h-full">
+                                <video loop autoPlay muted src="3_directingreel_v1_(46.666x63.402).mp4" className="absolute top-0 left-0 w-full h-full object-cover overflow-hidden" />
+                                <TopLeft name="Olipop" />
+                                <TopRight name="Movement" />
+                                <BottomLeft name="Nike" />
+                                <BottomRight name="Nike" />
+                            </div>
                         )}
                     </div>
-                    <div className="h-screen w-max relative" id="cine_banner">
-                        <video loop autoPlay muted src="cinebanner_v1_(26.66x).mp4" className="w-full h-full object-cover" />
+
+                    {/* CINEMATOGRAPHER */}
+                    <div className="h-screen w-[33.3333vw] relative" id="cine_banner">
+                        <video loop autoPlay muted src="cinebanner_v1_(26.66x).mp4" className="absolute top-0 left-0 w-full h-full object-cover border-x-[5px] border-black" />
                     </div>
                     <div className="w-screen h-screen relative group">
                     <video loop autoPlay muted src="Ciniebanner_v1_(26.666x43.402).mp4" className="w-full h-full object-cover" />
@@ -189,8 +202,10 @@ export default function HorizontalScroll() {
                             <video loop autoPlay muted src="TV-1-hevc-safari.mp4" className="absolute top-0 right-[-20%] z-20 w-1/2 w-full h-full object-cover overflow-hidden" />
                         )}
                     </div>
-                    <div className="h-screen w-max relative" id="directing_banner">
-                        <video loop autoPlay muted src="editingbanner_v1_(75x100).mp4" className="w-full h-full object-cover" />
+
+                    {/* EDITOR */}
+                    <div className="h-screen w-[33.3333vw] relative" id="directing_banner">
+                        <video loop autoPlay muted src="editingbanner_v1_(75x100).mp4" className="absolute top-0 left-0 w-full h-full object-cover border-x-[5px] border-black" />
                     </div>
                     <div className="w-screen h-screen relative group">
                         <video loop autoPlay muted src="4.1_editingstill_v1.mp4" className="w-full h-full object-cover" />
@@ -198,29 +213,7 @@ export default function HorizontalScroll() {
                             <video loop autoPlay muted src="editingreel.mp4" className="absolute top-0 left-0 w-full h-full object-cover overflow-hidden" />
                         )}
                     </div>
-                    {/* <div className="w-screen h-screen relative">
-                        <video loop autoPlay muted src="train2.mp4" className="w-full h-full object-cover" />
-                        <div className={"w-full h-full absolute top-0 flex flex-col z-10 delay-300" + (showLizzo ? " visible" : " invisible")}>
-                            <img src="lizzo1.png" className="w-full h-full object-cover" />
-                        </div>
-                        {playReel && (
-                            <div className="w-full h-full absolute top-0">
-                                <video loop autoPlay muted src="editingreel.mp4" className="w-full h-full object-cover overflow-hidden" />
-                            </div>
-                        )}
-                    </div> */}
-                    {/* <div className="w-screen h-screen relative">
-                        <video loop autoPlay muted src="editingreel.mp4" className="w-full h-full object-cover overflow-hidden" />
-                        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center z-10">
-                            <div className="font-display text-3xl underline underline-offset-8">Editing</div>
-                        </div>
-                    </div> */}
-                    {/* <div className="w-screen h-screen relative">
-                        <video loop autoPlay muted src="cinematographyreel.mp4" className="w-full h-full object-cover overflow-hidden" />
-                        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center z-10">
-                            <div className="font-display text-3xl underline underline-offset-8">Cinematography</div>
-                        </div>
-                    </div> */}
+
                 </motion.div>
             </div>
         </section>
