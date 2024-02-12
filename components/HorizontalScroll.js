@@ -5,6 +5,8 @@ import TopLeft from "./ProjectLinks/TopLeft";
 import TopRight from "./ProjectLinks/TopRight";
 import BottomRight from "./ProjectLinks/BottomRight";
 import BottomLeft from "./ProjectLinks/BottomLeft";
+import Banner from "./Videos/Banner";
+import StillWrapper from "./Videos/StillWrapper";
 
 export default function HorizontalScroll() {
     const targetRef = useRef(null);
@@ -173,11 +175,8 @@ export default function HorizontalScroll() {
                     </div>
 
                     {/* DIRECTOR  */}
-                    <div className="h-screen w-[33.3333vw] relative" id="directing_banner">
-                        <video loop autoPlay muted src="1.2_directingbanner_v1_(0x26.66).mp4" className="absolute top-0 left-0 w-full h-full object-cover border-x-[5px] border-black" />
-                    </div>
-                    <div className="w-screen h-screen relative group">
-                        <video loop autoPlay muted src="4_directingstill_v1_(46x46.666).mp4" className="w-full h-full object-cover" />
+                    <Banner src="1.2_directingbanner_v1_(0x26.66).mp4" />
+                    <StillWrapper src="4_directingstill_v1_(46x46.666).mp4">
                         {playDirecting && (
                             <div className="absolute top-0 left-0 w-full h-full">
                                 <video loop autoPlay muted src="3_directingreel_v1_(46.666x63.402).mp4" className="absolute top-0 left-0 w-full h-full object-cover overflow-hidden" />
@@ -187,32 +186,26 @@ export default function HorizontalScroll() {
                                 <BottomRight name="Nike" />
                             </div>
                         )}
-                    </div>
+                    </StillWrapper>
 
                     {/* CINEMATOGRAPHER */}
-                    <div className="h-screen w-[33.3333vw] relative" id="cine_banner">
-                        <video loop autoPlay muted src="cinebanner_v1_(26.66x).mp4" className="absolute top-0 left-0 w-full h-full object-cover border-x-[5px] border-black" />
-                    </div>
-                    <div className="w-screen h-screen relative group">
-                    <video loop autoPlay muted src="Ciniebanner_v1_(26.666x43.402).mp4" className="w-full h-full object-cover" />
+                    <Banner src="cinebanner_v1_(26.66x).mp4" />
+                    <StillWrapper src="Ciniebanner_v1_(26.666x43.402).mp4">
                         {playCine && (
                             <video loop autoPlay muted src="4_cinereel_v1_(46.666x63.402).mp4" className="absolute top-0 left-0 w-full h-full object-cover overflow-hidden" />
                         )}
                         {showTv && (
                             <video loop autoPlay muted src="TV-1-hevc-safari.mp4" className="absolute top-0 right-[-20%] z-20 w-1/2 w-full h-full object-cover overflow-hidden" />
                         )}
-                    </div>
+                    </StillWrapper>
 
                     {/* EDITOR */}
-                    <div className="h-screen w-[33.3333vw] relative" id="directing_banner">
-                        <video loop autoPlay muted src="editingbanner_v1_(75x100).mp4" className="absolute top-0 left-0 w-full h-full object-cover border-x-[5px] border-black" />
-                    </div>
-                    <div className="w-screen h-screen relative group">
-                        <video loop autoPlay muted src="4.1_editingstill_v1.mp4" className="w-full h-full object-cover" />
+                    <Banner src="editingbanner_v1_(75x100).mp4" />
+                    <StillWrapper src="4.1_editingstill_v1.mp4">
                         {playEditing && (
                             <video loop autoPlay muted src="editingreel.mp4" className="absolute top-0 left-0 w-full h-full object-cover overflow-hidden" />
                         )}
-                    </div>
+                    </StillWrapper>
 
                 </motion.div>
             </div>
